@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Zero a R$ 1.000 por Semana com Brigadeiros Sem Fogo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Nunito:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #543D32, #D6A86A);
+            color: #F5F1E8;
+            text-align: center;
+        }
+
+        /* Headline */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #FFD700;
+            /* Dourado */
+            letter-spacing: 1px;
+            /* Espaçamento entre letras */
+        }
+
+        /* Sub Headline */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            /* Aumentado */
+            color: #BFA17A;
+            margin-bottom: 30px;
+            margin-left: 5%;
+            /* Adicionadas margens */
+            margin-right: 5%;
+            /* Adicionadas margens */
+        }
+
+        /* Texto abaixo da sub-headline */
+        p {
+            font-size: 1.2em;
+            /* Aumentado */
+            margin-left: 5%;
+            /* Adicionadas margens */
+            margin-right: 5%;
+            /* Adicionadas margens */
+            line-height: 1.6;
+            /* Melhor espaçamento entre linhas */
+        }
+
+        /* Banner */
+        .banner {
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        .banner img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Video */
+        .video-container {
+            max-width: 900px;
+            margin: 20px auto;
+            width: 90%;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Contador Regressivo */
+        .countdown-container {
+            margin: 30px auto;
+            color: #F5F1E8;
+            font-size: 1.2em;
+        }
+
+        .countdown-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .countdown-number {
+            background-color: #ffca28;
+            color: #3e2723;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Botão */
+        .cta-button {
+            background: linear-gradient(to right, #4CAF50, #388E3C);
+            /* Degradê */
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            /* Removido o sublinhado */
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(to right, #388E3C, #4CAF50);
+            /* Degradê invertido */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Benefícios */
+        h3 {
+            font-size: 1.8em;
+            color: #FFD700;
+            /* Dourado */
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style-type: disc;
+            /* Estilo da lista */
+            padding-left: 30px;
+            text-align: left;
+            margin-left: 5%;
+            /* Adicionadas margens */
+            margin-right: 5%;
+            /* Adicionadas margens */
+        }
+
+        li {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* Depoimentos */
+        .testimonials-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 900px;
+        }
+
+        .testimonial {
+            border: 5px solid white;
+            background: linear-gradient(to bottom, #6a1b9a, #000);
+            padding: 20px;
+            border-radius: 15px;
+            width: 30%;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #eee;
+        }
+
+        .testimonial strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Chat Fake */
+        .chat-container {
+            max-width: 600px;
+            margin: 30px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .chat-messages {
+            padding: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .message img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .message-content {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #F5F1E8;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #F5F1E8;
+        }
+
+        .chat-input button {
+            background-color: #BFA17A;
+            color: #543D32;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .chat-input button:hover {
+            background-color: #D6A86A;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin-top: 50px;
+            color: #D4A5A5;
+        }
+
+        /* Notificações de Vendas Fakes */
+        .sale-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #D6A86A;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.5s;
+            z-index: 1000;
+            /* Garante que fique acima de outros elementos */
+        }
+
+        .sale-notification.show {
+            opacity: 1;
+        }
+
+        /* Imagem Abaixo do Chat Fake */
+        .bottom-image {
+            max-width: 700px;
+            margin: 30px auto;
+        }
+
+        .bottom-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .testimonials-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .testimonial {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Título Impactante -->
+    <h1>De Zero a R$ 1.000 por Semana com Brigadeiros Sem Fogo</h1>
+
+    <!-- Sub Headline Persuasiva -->
+    <h2>Descubra o Guia Definitivo para Conquistar sua Independência Financeira Vendendo Brigadeiros Gourmet Sem Precisar Fogão!</h2>
+
+    <!-- Texto Abaixo da Sub Headline -->
+    <p>Você sonha em ter mais dinheiro para realizar seus desejos e dar uma vida melhor para sua família? Cansada de apertar o cinto todo mês e não ter dinheiro para nada? Se sente frustrada por não conseguir realizar seus sonhos e presa em um trabalho que não te valoriza?</p>
+
+    <p>Imagine a sensação de ter dinheiro sobrando para fazer tudo o que você sempre quis. Imagine a alegria de poder comprar aquele presente especial para seus filhos, fazer aquela viagem dos sonhos ou simplesmente ter mais tranquilidade para pagar as contas.</p>
+
+    <p>Apresento o ebook "De Zero a R$ 1.000 com Brigadeiros Sem Fogo", o guia completo e prático que vai te ensinar a transformar sua cozinha em um negócio lucrativo de brigadeiros gourmet, mesmo que você nunca tenha feito um doce na vida!</p>
+
+    <!-- Vídeo do YouTube -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/FEEHuiJ7TiI" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+
+    <!-- Banner Chamativo -->
+    <div class="banner">
+        <img src="https://scontent.fnvt3-1.fna.fbcdn.net/v/t39.30808-6/508996279_10048056201955172_1758954095280526771_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=11uAQIi0JbUQ7kNvwGiJMa-&_nc_oc=AdkxnPX2S4Blu_hYDV8c7K9aipZCNwGNd6McYzRPXYyVwGp8Fw5T3Lq7MkVSEKTRDvE&_nc_zt=23&_nc_ht=scontent.fnvt3-1.fna&_nc_gid=ER0lmAxGM6Em_oRnbrRLPA&oh=00_AfP51W4FoHzE4mcr2hfY3SfWxH0JXuqkSUVbKJ8tlidxvQ&oe=685FA22F"
+            alt="Brigadeiros Gourmet">
+    </div>
+
+    <!-- Contador Regressivo -->
+    <div class="countdown-container">
+        🔥 Oferta Exclusiva Termina em: 🔥
+        <div class="countdown-numbers">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-number" id="seconds">00</span>
+        </div>
+    </div>
+
+    <!-- Texto Acima do Botão -->
+    <p>Não perca mais tempo! Clique no botão abaixo e comece agora mesmo a construir o seu negócio de sucesso com brigadeiros sem fogo!</p>
+
+    <!-- Botão CTA -->
+    <div style="margin-bottom: 20px;">
+        <a href="https://pay.kiwify.com.br/YBPHV7l" class="cta-button">SIM! EU QUERO COMEÇAR A FATURAR R$ 1.000 POR SEMANA!</a>
+    </div>
+
+    <!-- Benefícios -->
+    <h3>O que você vai aprender:</h3>
+    <ul>
+        <li>As 10 receitas de brigadeiros gourmet sem fogo mais vendidas do momento.</li>
+        <li>Como calcular seus custos e definir o preço ideal para seus brigadeiros.</li>
+        <li>Como criar embalagens irresistíveis que valorizam seus produtos.</li>
+        <li>Como divulgar seus brigadeiros nas redes sociais e atrair clientes todos os dias.</li>
+        <li>Como se formalizar como MEI e ter acesso a benefícios exclusivos.</li>
+        <li>E muito mais!</li>
+    </ul>
+
+    <!-- Depoimentos -->
+    <div class="testimonials-container">
+        <div class="testimonial">
+            <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+            <strong>Maria Silva</strong>
+            <p>"Com Brigadeiros Sem Fogo, finalmente consegui pagar minhas contas e ainda sobrou dinheiro para um presente!"</p>
+        </div>
+        <div class="testimonial">
+            <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+            <strong>João Santos</strong>
+            <p>"Nunca imaginei que seria tão fácil ganhar dinheiro em casa. Recomendo a todos que precisam de uma renda extra!"</p>
+        </div>
+        <div class="testimonial">
+            <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+            <strong>Carla Oliveira</strong>
+            <p>"Brigadeiros Sem Fogo mudou minha vida financeira. Agora tenho mais tempo para minha família e ainda ganho dinheiro!"</p>
+        </div>
+    </div>
+
+    <!-- Chat Fake -->
+    <div class="chat-container">
+        <div class="chat-messages">
+            <div class="message">
+                <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+                <div class="message-content">Oi pessoal! Alguém já está fazendo uma boa renda com isso?</div>
+            </div>
+            <div class="message">
+                <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+                <div class="message-content">Eu estou! Já recuperei meu investimento em uma semana.</div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Digite sua mensagem...">
+            <button>Enviar</button>
+        </div>
+    </div>
+
+    <!-- Imagem Abaixo do Chat Fake -->
+    <div class="bottom-image">
+        <img src="https://scontent.fnvt3-1.fna.fbcdn.net/v/t39.30808-6/508996279_10048056201955172_1758954095280526771_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=11uAQIi0JbUQ7kNvwGiJMa-&_nc_oc=AdkxnPX2S4Blu_hYDV8c7K9aipZCNwGNd6McYzRPXYyVwGp8Fw5T3Lq7MkVSEKTRDvE&_nc_zt=23&_nc_ht=scontent.fnvt3-1.fna&_nc_gid=ER0lmAxGM6Em_oRnbrRLPA&oh=00_AfP51W4FoHzE4mcr2hfY3SfWxH0JXuqkSUVbKJ8tlidxvQ&oe=685FA22F"
+            alt="Brigadeiros Gourmet">
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2024 Brigadeiros Sem Fogo | Este site não é afiliado ao Facebook ou qualquer entidade do Facebook.</p>
+    </footer>
+
+    <!-- Notificações de Vendas Fakes -->
+    <div class="sale-notification">
+        Mais uma venda efetuada! R$ 37,00
+    </div>
+
+    <script>
+        // Notificações de Vendas Fakes
+        const sales = [
+            "Maria Silva",
+            "João Santos",
+            "Ana Oliveira",
+            "Carlos Pereira",
+            "Juliana Souza"
+        ];
+
+        function showSaleNotification() {
+            const name = sales[Math.floor(Math.random() * sales.length)];
+            const notification = document.createElement("div");
+            notification.classList.add("sale-notification");
+            notification.innerHTML = `<strong>${name}</strong> acabou de adquirir! R$ 37,00`;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.add("show");
+            }, 100);
+
+            setTimeout(() => {
+                notification.classList.remove("show");
+                setTimeout(() => {
+                    notification.remove();
+                }, 500);
+            }, 4000); // Aparece a cada 4 segundos
+        }
+
+        setInterval(showSaleNotification, 4000);
+
+        // Chat Fake
+        const chatMessages = document.querySelector('.chat-messages');
+        const chatInput = document.querySelector('.chat-input input');
+        const chatButton = document.querySelector('.chat-input button');
+
+        function addMessage(message, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.innerHTML = `
+                <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+                <div class="message-content">${message}</div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        chatButton.addEventListener('click', () => {
+            const message = chatInput.value;
+            if (message) {
+                addMessage(message, true);
+                chatInput.value = '';
+            }
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                chatButton.click();
+            }
+        });
+
+        // Contador Regressivo
+        function updateCountdown() {
+            const now = new Date();
+            const targetDate = new Date();
+            targetDate.setDate(now.getDate() + 1); // Adiciona 1 dia
+            targetDate.setHours(0, 0, 0, 0); // Define para meia-noite
+
+            const timeLeft = targetDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+
+</html>
