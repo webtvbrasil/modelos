@@ -430,19 +430,11 @@
 
         <!-- Chat Fake -->
         <div class="chat-container">
-            <div class="chat-messages">
-                <div class="message">
-                    <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
-                    <div class="message-content">Oi pessoal! Alguém já está fazendo uma boa renda com isso?</div>
-                </div>
-                <div class="message">
-                    <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
-                    <div class="message-content">Eu estou! Já recuperei meu investimento em uma semana.</div>
-                </div>
+            <div class="chat-messages" id="chat-messages">
             </div>
             <div class="chat-input">
-                <input type="text" placeholder="Digite sua mensagem...">
-                <button>Enviar</button>
+                <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+                <button onclick="sendMessage()">Enviar</button>
             </div>
         </div>
 
@@ -496,34 +488,84 @@
         setInterval(showSaleNotification, 4000);
 
         // Chat Fake
-        const chatMessages = document.querySelector('.chat-messages');
-        const chatInput = document.querySelector('.chat-input input');
-        const chatButton = document.querySelector('.chat-input button');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const participants = [
+            { name: 'Alice Souza', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Bruno Alves', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Carla Silva', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Daniel Pereira', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Elisa Santos', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Fábio Oliveira', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Gabriela Rocha', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Henrique Costa', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Isabela Fernandes', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'João Mendes', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Karina Gonçalves', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Lucas Tavares', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Mariana Vargas', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Nicolas Duarte', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Olivia Castro', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Pedro Rodrigues', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Quiteria Lemos', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Renato Vieira', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Sofia Melo', avatar: 'https://thispersondoesnotexist.com/image' },
+            { name: 'Thiago Albuquerque', avatar: 'https://thispersondoesnotexist.com/image' }
+        ];
+        const messages = [
+            'Estou adorando o curso!',
+            'Já fiz minha primeira venda hoje!',
+            'As receitas são incríveis!',
+            'Super recomendo para quem quer uma renda extra!',
+            'Muito fácil de seguir as dicas!',
+            'As embalagens fazem toda a diferença!',
+            'Estou aprendendo muito!',
+            'O suporte é excelente!',
+            'Finalmente encontrei algo que me dá prazer!',
+            'Já estou pensando em expandir meu negócio!',
+            'As redes sociais são uma ótima ferramenta!',
+            'Me sinto mais confiante agora!',
+            'As dicas de MEI foram muito úteis!',
+            'Nunca pensei que seria tão fácil!',
+            'Estou muito feliz com os resultados!',
+            'Valeu cada centavo!',
+            'Transformei minha cozinha em um negócio lucrativo!',
+            'A melhor decisão que tomei!',
+            'Recomendo a todos os meus amigos!',
+            'Brigadeiros sem fogo é a solução!',
+        ];
 
-        function addMessage(message, isUser) {
+        function addMessage(participant, message) {
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message');
             messageDiv.innerHTML = `
-                <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
-                <div class="message-content">${message}</div>
+                <img src="${participant.avatar}" alt="Avatar">
+                <div class="message-content"><strong>${participant.name}:</strong> ${message}</div>
             `;
             chatMessages.appendChild(messageDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        chatButton.addEventListener('click', () => {
+        function sendMessage() {
             const message = chatInput.value;
             if (message) {
-                addMessage(message, true);
+                const userMessageDiv = document.createElement('div');
+                userMessageDiv.classList.add('message');
+                userMessageDiv.innerHTML = `
+                    <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+                    <div class="message-content"><strong>Você:</strong> ${message}</div>
+                `;
+                chatMessages.appendChild(userMessageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
                 chatInput.value = '';
             }
-        });
+        }
 
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                chatButton.click();
-            }
-        });
+        setInterval(() => {
+            const randomParticipant = participants[Math.floor(Math.random() * participants.length)];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            addMessage(randomParticipant, randomMessage);
+        }, 2000);
 
         // Contador Regressivo
         function updateCountdown() {
