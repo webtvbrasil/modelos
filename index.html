@@ -11,6 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Nunito:wght@400;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap">
+    <!-- Importando a fonte Montserrat -->
     <style>
         /* Estilos Globais */
         body {
@@ -22,42 +24,67 @@
             text-align: center;
         }
 
+        /* Container */
+        .container {
+            max-width: 1000px;
+            /* Largura máxima */
+            margin: 20px auto;
+            /* Centralizado */
+            border: 2px solid white;
+            /* Borda branca */
+            border-radius: 15px;
+            /* Borda arredondada */
+            padding: 20px;
+            /* Espaçamento interno */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            /* Sombra */
+        }
+
         /* Headline */
         h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
+            /* Fonte Montserrat */
             font-size: 3.5em;
-            font-weight: 700;
+            font-weight: 900;
+            /* Peso 900 */
             margin-top: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             color: #FFD700;
             /* Dourado */
             letter-spacing: 1px;
             /* Espaçamento entre letras */
+            max-width: 600px;
+            /* Largura máxima */
+            margin-left: auto;
+            /* Centralizar */
+            margin-right: auto;
+            /* Centralizar */
+            line-height: 1.2;
+            /* Espaçamento entre linhas */
         }
 
         /* Sub Headline */
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2em;
-            /* Aumentado */
             color: #BFA17A;
             margin-bottom: 30px;
-            margin-left: 5%;
-            /* Adicionadas margens */
-            margin-right: 5%;
-            /* Adicionadas margens */
+            max-width: 600px;
+            /* Largura máxima */
+            margin-left: auto;
+            /* Centralizar */
+            margin-right: auto;
+            /* Centralizar */
+            line-height: 1.4;
+            /* Espaçamento entre linhas */
         }
 
         /* Texto abaixo da sub-headline */
         p {
             font-size: 1.2em;
-            /* Aumentado */
             margin-left: 5%;
-            /* Adicionadas margens */
             margin-right: 5%;
-            /* Adicionadas margens */
             line-height: 1.6;
-            /* Melhor espaçamento entre linhas */
         }
 
         /* Banner */
@@ -112,7 +139,6 @@
         /* Botão */
         .cta-button {
             background: linear-gradient(to right, #4CAF50, #388E3C);
-            /* Degradê */
             color: #fff;
             padding: 15px 30px;
             font-size: 1.3em;
@@ -122,12 +148,10 @@
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             text-decoration: none;
-            /* Removido o sublinhado */
         }
 
         .cta-button:hover {
             background: linear-gradient(to right, #388E3C, #4CAF50);
-            /* Degradê invertido */
             transform: translateY(-3px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
         }
@@ -136,19 +160,15 @@
         h3 {
             font-size: 1.8em;
             color: #FFD700;
-            /* Dourado */
             margin-top: 30px;
         }
 
         ul {
             list-style-type: disc;
-            /* Estilo da lista */
             padding-left: 30px;
             text-align: left;
             margin-left: 5%;
-            /* Adicionadas margens */
             margin-right: 5%;
-            /* Adicionadas margens */
         }
 
         li {
@@ -288,7 +308,6 @@
             opacity: 0;
             transition: opacity 0.5s;
             z-index: 1000;
-            /* Garante que fique acima de outros elementos */
         }
 
         .sale-notification.show {
@@ -331,103 +350,108 @@
 
 <body>
 
-    <!-- Título Impactante -->
-    <h1>De Zero a R$ 1.000 por Semana com Brigadeiros Sem Fogo</h1>
+    <!-- Container -->
+    <div class="container">
 
-    <!-- Sub Headline Persuasiva -->
-    <h2>Descubra o Guia Definitivo para Conquistar sua Independência Financeira Vendendo Brigadeiros Gourmet Sem Precisar Fogão!</h2>
+        <!-- Título Impactante -->
+        <h1>De Zero a R$ 1.000 por Semana com Brigadeiros Sem Fogo</h1>
 
-    <!-- Texto Abaixo da Sub Headline -->
-    <p>Você sonha em ter mais dinheiro para realizar seus desejos e dar uma vida melhor para sua família? Cansada de apertar o cinto todo mês e não ter dinheiro para nada? Se sente frustrada por não conseguir realizar seus sonhos e presa em um trabalho que não te valoriza?</p>
+        <!-- Sub Headline Persuasiva -->
+        <h2>Descubra o Guia Definitivo para Conquistar sua Independência Financeira Vendendo Brigadeiros Gourmet Sem Precisar Fogão!</h2>
 
-    <p>Imagine a sensação de ter dinheiro sobrando para fazer tudo o que você sempre quis. Imagine a alegria de poder comprar aquele presente especial para seus filhos, fazer aquela viagem dos sonhos ou simplesmente ter mais tranquilidade para pagar as contas.</p>
+        <!-- Texto Abaixo da Sub Headline -->
+        <p>Você sonha em ter mais dinheiro para realizar seus desejos e dar uma vida melhor para sua família? Cansada de apertar o cinto todo mês e não ter dinheiro para nada? Se sente frustrada por não conseguir realizar seus sonhos e presa em um trabalho que não te valoriza?</p>
 
-    <p>Apresento o ebook "De Zero a R$ 1.000 com Brigadeiros Sem Fogo", o guia completo e prático que vai te ensinar a transformar sua cozinha em um negócio lucrativo de brigadeiros gourmet, mesmo que você nunca tenha feito um doce na vida!</p>
+        <p>Imagine a sensação de ter dinheiro sobrando para fazer tudo o que você sempre quis. Imagine a alegria de poder comprar aquele presente especial para seus filhos, fazer aquela viagem dos sonhos ou simplesmente ter mais tranquilidade para pagar as contas.</p>
 
-    <!-- Vídeo do YouTube -->
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/FEEHuiJ7TiI" title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-    </div>
+        <p>Apresento o ebook "De Zero a R$ 1.000 com Brigadeiros Sem Fogo", o guia completo e prático que vai te ensinar a transformar sua cozinha em um negócio lucrativo de brigadeiros gourmet, mesmo que você nunca tenha feito um doce na vida!</p>
 
-    <!-- Banner Chamativo -->
-    <div class="banner">
-        <img src="https://scontent.fnvt3-1.fna.fbcdn.net/v/t39.30808-6/508996279_10048056201955172_1758954095280526771_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=11uAQIi0JbUQ7kNvwGiJMa-&_nc_oc=AdkxnPX2S4Blu_hYDV8c7K9aipZCNwGNd6McYzRPXYyVwGp8Fw5T3Lq7MkVSEKTRDvE&_nc_zt=23&_nc_ht=scontent.fnvt3-1.fna&_nc_gid=ER0lmAxGM6Em_oRnbrRLPA&oh=00_AfP51W4FoHzE4mcr2hfY3SfWxH0JXuqkSUVbKJ8tlidxvQ&oe=685FA22F"
-            alt="Brigadeiros Gourmet">
-    </div>
-
-    <!-- Contador Regressivo -->
-    <div class="countdown-container">
-        🔥 Oferta Exclusiva Termina em: 🔥
-        <div class="countdown-numbers">
-            <span class="countdown-number" id="days">00</span>
-            <span class="countdown-number" id="hours">00</span>
-            <span class="countdown-number" id="minutes">00</span>
-            <span class="countdown-number" id="seconds">00</span>
+        <!-- Vídeo do YouTube -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/FEEHuiJ7TiI" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
-    </div>
 
-    <!-- Texto Acima do Botão -->
-    <p>Não perca mais tempo! Clique no botão abaixo e comece agora mesmo a construir o seu negócio de sucesso com brigadeiros sem fogo!</p>
-
-    <!-- Botão CTA -->
-    <div style="margin-bottom: 20px;">
-        <a href="https://pay.kiwify.com.br/YBPHV7l" class="cta-button">SIM! EU QUERO COMEÇAR A FATURAR R$ 1.000 POR SEMANA!</a>
-    </div>
-
-    <!-- Benefícios -->
-    <h3>O que você vai aprender:</h3>
-    <ul>
-        <li>As 10 receitas de brigadeiros gourmet sem fogo mais vendidas do momento.</li>
-        <li>Como calcular seus custos e definir o preço ideal para seus brigadeiros.</li>
-        <li>Como criar embalagens irresistíveis que valorizam seus produtos.</li>
-        <li>Como divulgar seus brigadeiros nas redes sociais e atrair clientes todos os dias.</li>
-        <li>Como se formalizar como MEI e ter acesso a benefícios exclusivos.</li>
-        <li>E muito mais!</li>
-    </ul>
-
-    <!-- Depoimentos -->
-    <div class="testimonials-container">
-        <div class="testimonial">
-            <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
-            <strong>Maria Silva</strong>
-            <p>"Com Brigadeiros Sem Fogo, finalmente consegui pagar minhas contas e ainda sobrou dinheiro para um presente!"</p>
+        <!-- Banner Chamativo -->
+        <div class="banner">
+            <img src="https://scontent.fnvt3-1.fna.fbcdn.net/v/t39.30808-6/508996279_10048056201955172_1758954095280526771_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=11uAQIi0JbUQ7kNvwGiJMa-&_nc_oc=AdkxnPX2S4Blu_hYDV8c7K9aipZCNwGNd6McYzRPXYyVwGp8Fw5T3Lq7MkVSEKTRDvE&_nc_zt=23&_nc_ht=scontent.fnvt3-1.fna&_nc_gid=ER0lmAxGM6Em_oRnbrRLPA&oh=00_AfP51W4FoHzE4mcr2hfY3SfWxH0JXuqkSUVbKJ8tlidxvQ&oe=685FA22F"
+                alt="Brigadeiros Gourmet">
         </div>
-        <div class="testimonial">
-            <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
-            <strong>João Santos</strong>
-            <p>"Nunca imaginei que seria tão fácil ganhar dinheiro em casa. Recomendo a todos que precisam de uma renda extra!"</p>
-        </div>
-        <div class="testimonial">
-            <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
-            <strong>Carla Oliveira</strong>
-            <p>"Brigadeiros Sem Fogo mudou minha vida financeira. Agora tenho mais tempo para minha família e ainda ganho dinheiro!"</p>
-        </div>
-    </div>
 
-    <!-- Chat Fake -->
-    <div class="chat-container">
-        <div class="chat-messages">
-            <div class="message">
-                <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
-                <div class="message-content">Oi pessoal! Alguém já está fazendo uma boa renda com isso?</div>
-            </div>
-            <div class="message">
-                <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
-                <div class="message-content">Eu estou! Já recuperei meu investimento em uma semana.</div>
+        <!-- Contador Regressivo -->
+        <div class="countdown-container">
+            🔥 Oferta Exclusiva Termina em: 🔥
+            <div class="countdown-numbers">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-number" id="seconds">00</span>
             </div>
         </div>
-        <div class="chat-input">
-            <input type="text" placeholder="Digite sua mensagem...">
-            <button>Enviar</button>
-        </div>
-    </div>
 
-    <!-- Imagem Abaixo do Chat Fake -->
-    <div class="bottom-image">
-        <img src="https://scontent.fnvt3-1.fna.fbcdn.net/v/t39.30808-6/508996279_10048056201955172_1758954095280526771_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=11uAQIi0JbUQ7kNvwGiJMa-&_nc_oc=AdkxnPX2S4Blu_hYDV8c7K9aipZCNwGNd6McYzRPXYyVwGp8Fw5T3Lq7MkVSEKTRDvE&_nc_zt=23&_nc_ht=scontent.fnvt3-1.fna&_nc_gid=ER0lmAxGM6Em_oRnbrRLPA&oh=00_AfP51W4FoHzE4mcr2hfY3SfWxH0JXuqkSUVbKJ8tlidxvQ&oe=685FA22F"
-            alt="Brigadeiros Gourmet">
+        <!-- Texto Acima do Botão -->
+        <p>Não perca mais tempo! Clique no botão abaixo e comece agora mesmo a construir o seu negócio de sucesso com brigadeiros sem fogo!</p>
+
+        <!-- Botão CTA -->
+        <div style="margin-bottom: 20px;">
+            <a href="https://pay.kiwify.com.br/YBPHV7l" class="cta-button">SIM! EU QUERO COMEÇAR A FATURAR R$ 1.000 POR SEMANA!</a>
+        </div>
+
+        <!-- Benefícios -->
+        <h3>O que você vai aprender:</h3>
+        <ul>
+            <li>As 10 receitas de brigadeiros gourmet sem fogo mais vendidas do momento.</li>
+            <li>Como calcular seus custos e definir o preço ideal para seus brigadeiros.</li>
+            <li>Como criar embalagens irresistíveis que valorizam seus produtos.</li>
+            <li>Como divulgar seus brigadeiros nas redes sociais e atrair clientes todos os dias.</li>
+            <li>Como se formalizar como MEI e ter acesso a benefícios exclusivos.</li>
+            <li>E muito mais!</li>
+        </ul>
+
+        <!-- Depoimentos -->
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+                <strong>Maria Silva</strong>
+                <p>"Com Brigadeiros Sem Fogo, finalmente consegui pagar minhas contas e ainda sobrou dinheiro para um presente!"</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+                <strong>João Santos</strong>
+                <p>"Nunca imaginei que seria tão fácil ganhar dinheiro em casa. Recomendo a todos que precisam de uma renda extra!"</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+                <strong>Carla Oliveira</strong>
+                <p>"Brigadeiros Sem Fogo mudou minha vida financeira. Agora tenho mais tempo para minha família e ainda ganho dinheiro!"</p>
+            </div>
+        </div>
+
+        <!-- Chat Fake -->
+        <div class="chat-container">
+            <div class="chat-messages">
+                <div class="message">
+                    <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+                    <div class="message-content">Oi pessoal! Alguém já está fazendo uma boa renda com isso?</div>
+                </div>
+                <div class="message">
+                    <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+                    <div class="message-content">Eu estou! Já recuperei meu investimento em uma semana.</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Digite sua mensagem...">
+                <button>Enviar</button>
+            </div>
+        </div>
+
+        <!-- Imagem Abaixo do Chat Fake -->
+        <div class="bottom-image">
+            <img src="https://scontent.fnvt3-1.fna.fbcdn.net/v/t39.30808-6/508996279_10048056201955172_1758954095280526771_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=11uAQIi0JbUQ7kNvwGiJMa-&_nc_oc=AdkxnPX2S4Blu_hYDV8c7K9aipZCNwGNd6McYzRPXYyVwGp8Fw5T3Lq7MkVSEKTRDvE&_nc_zt=23&_nc_ht=scontent.fnvt3-1.fna&_nc_gid=ER0lmAxGM6Em_oRnbrRLPA&oh=00_AfP51W4FoHzE4mcr2hfY3SfWxH0JXuqkSUVbKJ8tlidxvQ&oe=685FA22F"
+                alt="Brigadeiros Gourmet">
+        </div>
+
     </div>
 
     <!-- Rodapé -->
