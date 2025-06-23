@@ -427,12 +427,12 @@
         <!-- Depoimentos -->
         <div class="testimonials-container">
             <div class="testimonial">
-                <img src="http://thispersondoesnotexist.com/?utm_source=Maria+Silva" alt="Avatar">
+                <img src="https://i.pravatar.cc/300?utm_source=Maria+Silva" alt="Avatar">
                 <strong>Maria Silva</strong>
                 <p>"Com Brigadeiros Sem Fogo, finalmente consegui pagar minhas contas e ainda sobrou dinheiro para um presente!"</p>
             </div>
             <div class="testimonial">
-                <img src="https://thispersondoesnotexist.com/?utm_source=João+Santos" alt="Avatar">
+                <img src="https://i.pravatar.cc/300?utm_source=João+Santos" alt="Avatar">
                 <strong>João Santos</strong>
                 <p>"Nunca imaginei que seria tão fácil ganhar dinheiro em casa. Recomendo a todos que precisam de uma renda extra!"</p>
             </div>
@@ -497,7 +497,7 @@
                 setTimeout(() => {
                     notification.remove();
                 }, 500);
-            }, 4000); // Aparece a cada 4 segundos
+            }, 10000); // Aparece a cada 4 segundos
         }
 
         setInterval(showSaleNotification, 4000);
@@ -567,7 +567,7 @@
                 const userMessageDiv = document.createElement('div');
                 userMessageDiv.classList.add('message');
                 userMessageDiv.innerHTML = `
-                    <img src="https://thispersondoesnotexist.com/image" alt="Avatar">
+                    <img src="https://i.pravatar.cc/300" alt="Avatar">
                     <div class="message-content"><strong>Você:</strong> ${message}</div>
                 `;
                 chatMessages.appendChild(userMessageDiv);
